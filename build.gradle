@@ -12,8 +12,7 @@ buildscript {
 }
 
 dependencies {
-  compile 'com.sendgrid:smtpapi-java:0.0.1'
-  compile 'com.sendgrid:sendgrid-java:0.2.0'
+  compile 'com.sendgrid:sendgrid-java:0.3.0'
 }
 
 repositories {
@@ -41,3 +40,8 @@ build << {
 artifacts {
   archives fatJar
 }
+
+compileJava { 
+  options.encoding = "UTF-8" 
+}
+
