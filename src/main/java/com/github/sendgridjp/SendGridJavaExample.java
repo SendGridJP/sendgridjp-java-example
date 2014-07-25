@@ -3,11 +3,12 @@ package com.github.sendgridjp;
 import java.lang.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import com.sendgrid.SendGrid;
 import com.sendgrid.SendGridException;
 
 public class SendGridJavaExample {
-  public static void main(String[] args) throws FileNotFoundException, SendGridException {
+  public static void main(String[] args) throws FileNotFoundException, SendGridException, IOException {
     String sendgridUsername  = System.getenv("SENDGRID_USERNAME");
     String sendgridPassword  = System.getenv("SENDGRID_PASSWORD");
     String[] tos             = System.getenv("TOS").split(",",0);
@@ -22,14 +23,14 @@ public class SendGridJavaExample {
     email.addSubstitution("place", new String[] { "office", "home", "office" });
     email.addSection("office", "中野");
     email.addSection("home", "目黒");
-    email.addCategory("カテゴリ1");
+    email.addCategory("category1");
     email.setFrom(from);
     email.setFromName("送信者名");
     email.setSubject("[sendgrid-java-example] フクロウのお名前はfullnameさん");
     email.setText("familyname さんは何をしていますか？\r\n 彼はplaceにいます。");
     email.setHtml("<strong> familyname さんは何をしていますか？</strong><br />彼はplaceにいます。");
     File file = new File("./gif.gif");
-    email.addAttachment(file, "owl.gif");
+    email.addAttachment("owl.gif", file);
 
     SendGrid sendgrid = new SendGrid(sendgridUsername, sendgridPassword);
     SendGrid.Response response = sendgrid.send(email);
