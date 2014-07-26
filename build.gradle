@@ -12,7 +12,7 @@ buildscript {
 }
 
 dependencies {
-  compile 'com.sendgrid:sendgrid-java:0.3.0'
+  compile 'com.sendgrid:sendgrid-java:1.1.0'
 }
 
 repositories {
