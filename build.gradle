@@ -1,6 +1,6 @@
 apply plugin: 'eu.appsatori.fatjar'
 
-version = "0.0.1"
+version = "0.0.2"
 
 buildscript {
   dependencies {
@@ -12,7 +12,7 @@ buildscript {
 }
 
 dependencies {
-  compile 'com.sendgrid:sendgrid-java:1.2.0'
+  compile 'com.sendgrid:sendgrid-java:1.3.0'
 }
 
 repositories {
