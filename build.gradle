@@ -1,13 +1,13 @@
-apply plugin: 'fatjar'
+apply plugin: 'eu.appsatori.fatjar'
 
 version = "0.0.1"
 
 buildscript {
   dependencies {
-    classpath 'eu.appsatori:gradle-fatjar-plugin:0.1.2' // adds fatJar task
+    classpath 'eu.appsatori:gradle-fatjar-plugin:0.3' // adds fatJar task
   }
   repositories {
-    mavenCentral()
+    jcenter()
   }
 }
 
@@ -41,7 +41,6 @@ artifacts {
   archives fatJar
 }
 
-compileJava { 
-  options.encoding = "UTF-8" 
+compileJava {
+  options.encoding = "UTF-8"
 }
-
