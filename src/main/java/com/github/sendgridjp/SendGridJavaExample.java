@@ -15,9 +15,7 @@ public class SendGridJavaExample {
     String from              = System.getenv("FROM");
 
     SendGrid.Email email = new SendGrid.Email();
-    for (String to : tos) {
-        email.addSmtpApiTo(to);
-    }
+    email.addSmtpApiTo(tos);
     email.addSubstitution("fullname", new String[] { "田中 太郎", "佐藤 次郎", "鈴木 三郎" });
     email.addSubstitution("familyname", new String[] { "田中", "佐藤", "鈴木" });
     email.addSubstitution("place", new String[] { "office", "home", "office" });
