@@ -10,6 +10,7 @@ import com.sendgrid.SendGridException;
 public class SendGridJavaExample {
   public static void main(String[] args) throws FileNotFoundException, SendGridException, IOException {
     String apiKey            = System.getenv("API_KEY");
+
     String[] tos             = System.getenv("TOS").split(",",0);
     String from              = System.getenv("FROM");
 
