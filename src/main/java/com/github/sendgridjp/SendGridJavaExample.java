@@ -9,8 +9,7 @@ import com.sendgrid.SendGridException;
 
 public class SendGridJavaExample {
   public static void main(String[] args) throws FileNotFoundException, SendGridException, IOException {
-    String sendgridUsername  = System.getenv("SENDGRID_USERNAME");
-    String sendgridPassword  = System.getenv("SENDGRID_PASSWORD");
+    String apiKey            = System.getenv("API_KEY");
     String[] tos             = System.getenv("TOS").split(",",0);
     String from              = System.getenv("FROM");
 
@@ -30,7 +29,7 @@ public class SendGridJavaExample {
     File file = new File("./gif.gif");
     email.addAttachment("owl.gif", file);
 
-    SendGrid sendgrid = new SendGrid(sendgridUsername, sendgridPassword);
+    SendGrid sendgrid = new SendGrid(apiKey);
     SendGrid.Response response = sendgrid.send(email);
     System.out.println(response.getMessage());
   }
