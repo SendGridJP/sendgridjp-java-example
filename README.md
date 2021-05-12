@@ -5,14 +5,13 @@
 ## 使い方
 
 ```bash
-git clone http://github.com/sendgridjp/sendgridjp-java-example.git
+git clone git@github.com:kikutaro/sendgridjp-java-example.git
 cd sendgridjp-java-example
-cp .env.example .env
+cp app/src/main/resources/.env.example app/src/main/resources/.env
 # .envファイルを編集してください
 gradle build
-./run.sh
+gradle run
 ```
-`{"message":"success"}`と表示されたら送信成功です。
 
 ## .envファイルの編集
 .envファイルは以下のようになっています。

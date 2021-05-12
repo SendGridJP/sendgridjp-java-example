@@ -1,7 +1,13 @@
-.DS_Store
-.env*
-!.env.example
-build
+# Ignore Gradle project-specific cache directory
 .gradle
-.DS_Store
-repo
+
+# Ignore Gradle build output directory
+build
+
+.project
+.settings
+app/.settings
+app/.classpath
+app/.project
+bin
+app/src/main/resources/.env
