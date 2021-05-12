@@ -7,7 +7,7 @@
 ```bash
 git clone git@github.com:kikutaro/sendgridjp-java-example.git
 cd sendgridjp-java-example
-cp app\src\main\resources\.env.example cp app\src\main\resources\.env
+cp app/src/main/resources/.env.example app/src/main/resources/.env
 # .envファイルを編集してください
 gradle build
 gradle run
